@@ -1,51 +1,52 @@
-variable "project" {   # this variable is mandatory
-  type = string
+# Mandatory
+variable "project" {
+  type        = string
 }
 
 variable "environment" {
-    type = string
+  type        = string
 }
 
+# Optional
 variable "vpc_cidr" {
-  type = string
-  default = "10.0.0.0/16"
+    type = string
+    default = "10.0.0.0/16"
 }
 
-variable "vpc_tags" {  # Optional
+# Optional
+variable "vpc_tags" {
     type = map
     default = {}
 }
 
-variable "igw_tags" {  # Optional
+variable "igw_tags" {
     type = map
     default = {}
 }
 
 variable "public_subnet_cidrs" {
-  type = list
-  default = ["10.0.1.0/24", "10.0.2.0/24" ]
+    type = list
+    default = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
 variable "public_subnet_tags" {
     type = map
     default = {}
-  
 }
 
 variable "private_subnet_cidrs" {
-  type = list
-  default = ["10.0.11.0/24", "10.0.12.0/24" ]
+    type = list
+    default = ["10.0.11.0/24", "10.0.12.0/24"]
 }
 
 variable "private_subnet_tags" {
     type = map
     default = {}
-  
 }
 
 variable "database_subnet_cidrs" {
-  type = list
-  default = ["10.0.21.0/24", "10.0.22.0/24" ]
+    type = list
+    default = ["10.0.21.0/24", "10.0.22.0/24"]
 }
 
 variable "database_subnet_tags" {
@@ -79,9 +80,9 @@ variable "nat_gateway_tags" {
 }
 
 variable "is_peering_required" {
-  default = false
+    default = false
 }
 
 variable "vpc_peering_tags" {
-  default = {}
+    default = {}
 }
